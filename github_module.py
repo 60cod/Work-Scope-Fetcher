@@ -4,7 +4,7 @@ import requests
 
 def get_my_prs(token, start, end):
     headers = {"Authorization": f"token {token}"}
-    query = f"author:USERNAME type:pr created:{start}..{end}"
+    query = f"author:ygna-b type:pr created:{start}..{end}"
     url = "https://api.github.com/search/issues"
     res = requests.get(url, headers=headers, params={"q": query})
     items = res.json().get("items", [])

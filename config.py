@@ -12,4 +12,6 @@ JIRA_AUTH = ("ygna@email.com", "jira-api-token")
 GH_TOKEN = "your-github-token"
 
 # Google Drive 설정
-GOOGLE_CREDS = None  # google-auth credentials 객체 (token.json 등으로 초기화 필요)
+import pickle
+with open("token.pickle", "rb") as token:
+    GOOGLE_CREDS = pickle.load(token)  # google-auth credentials 객체 (token.json 등으로 초기화 필요)
